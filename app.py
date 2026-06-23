@@ -1,24 +1,52 @@
 import sys 
-
+import json
 sys.path.append("src")
 
 import pandas as pd
 import streamlit as st
 
 
-
-from load_data import candidate_generator
 from feature_engineering import extract_features
 from scoring import score_candidate
 
+st.title("Redrob Candidate Ranking Demo")
+st.markdown("""
+Upload a candidate dataset in JSONL format.
 
+The system will:
+1. Parse candidate profiles
+2. Extract features
+3. Score candidates
+4. Display the Top 100 candidates
+""")
+
+uploaded_file = st.file_uploader(
+    "Upload candidates.jsonl",
+    type=["jsonl"]
+)
+
+if uploaded_file is None:
+    st.info("Please upload a JSONL file to continue.")
+    st.stop()
+
+candidates = []
+
+for line in uploaded_file:
+
+    line = line.decode("utf-8").strip()
+
+    if not line:
+        continue
+
+    candidates.append(
+        json.loads(line)
+    )
 @st.cache_data
-def load_top_candidates():
+def rank_candidates(candidates):
 
     results = []
 
-    for candidate in candidate_generator(
-            "data/demo_candidates.jsonl"):
+    for candidate in candidates:
 
         features = extract_features(candidate)
 
@@ -57,7 +85,7 @@ st.set_page_config(
 
 st.title("Redrob Candidate Ranking Demo")
 
-top_candidates = load_top_candidates()
+top_candidates = rank_candidates(candidates)
 
 df = pd.DataFrame([
     {
