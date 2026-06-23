@@ -18,7 +18,7 @@ def load_top_candidates():
     results = []
 
     for candidate in candidate_generator(
-            "data/candidates.jsonl"):
+            "data/demo_candidates.jsonl"):
 
         features = extract_features(candidate)
 
