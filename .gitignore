@@ -2,6 +2,7 @@
 venv/
 
 data/candidates.jsonl
+src/create_demo_candidates.py
 
 __pycache__/
 outputs/

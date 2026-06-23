@@ -250,6 +250,23 @@ This provides:
 * Ranking quality insights
 
 ---
+## Streamlit Demo Usage
+
+Due to GitHub file size restrictions, the original candidate dataset is not included in this repository.
+
+To use the Streamlit application:
+
+1. Launch the application.
+2. Upload a valid `candidates.jsonl` file.
+3. The system will:
+
+   * Parse candidate profiles
+   * Extract ranking features
+   * Score candidates
+   * Display the Top 100 ranked candidates
+
+This approach keeps the repository lightweight while preserving full ranking functionality.
+
 
 ## Streamlit Demo
 
