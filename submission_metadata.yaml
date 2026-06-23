@@ -1,0 +1,62 @@
+team_name: "Purusharth"
+
+primary_contact:
+  name: "Ayushman Parasharr"
+  email: "YOUR_EMAIL"
+  phone: "+91-YOUR_PHONE"
+
+team_members:
+  - name: "Ayushman Parashar"
+    email: "YOUR_EMAIL"
+    role: "ML Engineer"
+  - name: "Tushar Kumar"
+    email: "YOUR_EMAIL"
+    role: "ML Engineer"
+  - name: "Ravi Shankar Gupta"
+    email: "YOUR_EMAIL"
+    role: "ML Engineer"
+  - name: "Mantu Yadav"
+    email: "YOUR_EMAIL"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-hackathon"
+
+sandbox_link: "TO_BE_ADDED_AFTER_STREAMLIT_DEPLOYMENT"
+
+reproduce_command: "python src/export_submission.py"
+
+compute:
+  platform: "Windows Laptop"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "ChatGPT"
+  - "Claude"
+
+ai_usage_summary: |
+  Used ChatGPT for architecture discussion, debugging, feature engineering ideas,
+  repository organization, and documentation. No candidate ranking was performed
+  using external APIs. The final ranking runs locally on CPU without network access.
+
+methodology_summary: |
+  Built a rule-based candidate ranking system focused on AI/ML hiring signals.
+  Candidates are scored using experience, current title, career consistency,
+  retrieval and ranking related skills, vector database experience, production ML
+  indicators, and behavioral signals. Additional penalties are applied to
+  suspicious profiles and non-relevant career paths. The final output ranks the
+  top 100 candidates and generates candidate-specific reasoning for each ranking.
+  The solution runs locally on CPU within the competition constraints.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

@@ -1,0 +1,14 @@
+.venv/
+venv/
+
+data/candidates.jsonl
+
+__pycache__/
+outputs/
+*.pyc
+.idea/
+.vscode/
+
+.DS_Store
+Thumbs.db
+
